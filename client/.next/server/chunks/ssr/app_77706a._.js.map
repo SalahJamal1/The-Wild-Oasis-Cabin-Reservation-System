@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///Users/salah/Downloads/wild/client/app/_components/TextEditor.js"],"sourcesContent":["\"use client\";\nimport { useState } from \"react\";\n\nexport function TextEditor({ children }) {\n  const [show, setShow] = useState(false);\n  const displayText = show\n    ? children\n    : children.split(\" \").slice(0, 45).join(\" \") + \"...\";\n  return (\n    <div className=\"mb-8\">\n      <p className=\"text-base text-primary-300\">{displayText}</p>\n      <span\n        className=\"ml-2 cursor-pointer border-b-2 border-primary-700 text-primary-700\"\n        onClick={() => setShow((s) => !s)}\n      >\n        {show ? \"Show less\" : \"Show more\"}\n      </span>\n    </div>\n  );\n}\n"],"names":[],"mappings":";;;;AACA;AADA;;;AAGO,SAAS,WAAW,EAAE,QAAQ,EAAE;IACrC,MAAM,CAAC,MAAM,QAAQ,GAAG,CAAA,GAAA,qMAAA,CAAA,WAAQ,AAAD,EAAE;IACjC,MAAM,cAAc,OAChB,WACA,SAAS,KAAK,CAAC,KAAK,KAAK,CAAC,GAAG,IAAI,IAAI,CAAC,OAAO;IACjD,qBACE,8OAAC;QAAI,WAAU;;0BACb,8OAAC;gBAAE,WAAU;0BAA8B;;;;;;0BAC3C,8OAAC;gBACC,WAAU;gBACV,SAAS,IAAM,QAAQ,CAAC,IAAM,CAAC;0BAE9B,OAAO,cAAc;;;;;;;;;;;;AAI9B"}},
+    {"offset": {"line": 45, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}
