@@ -1,7 +1,6 @@
 "use client";
 import { createContext, useContext, useEffect, useState } from "react";
-import { getUser, Login, Logout } from "../_lib/apiService";
-import { useRouter } from "next/navigation";
+import { getUser, Logout } from "../_lib/apiService";
 
 const initailStae = { from: null, to: null };
 
@@ -9,32 +8,28 @@ const ReservationContextProvider = createContext();
 function ReservationContext({ children }) {
   const [selected, setSelected] = useState(initailStae);
   const [user, Setuser] = useState({});
-
+  const [auth, SetAuth] = useState(false);
   const reset = () => setSelected(null);
 
-  async function handelLogin(email, password) {
-    try {
-      await Login({ email, password });
-    } catch (err) {
-      console.log(err);
-    }
-  }
-  useEffect(function () {
-    async function getCurrentUser() {
-      try {
-        const data = await getUser();
-        Setuser(data);
-      } catch (err) {
-        console.log(err);
+  useEffect(
+    function () {
+      async function getCurrentUser() {
+        try {
+          const data = await getUser();
+          Setuser(data);
+        } catch (err) {
+          console.log(err);
+        }
       }
-    }
-    getCurrentUser();
-  }, []);
-
+      getCurrentUser();
+    },
+    [Setuser]
+  );
   async function handelLogout() {
     try {
       const res = await Logout();
       Setuser({});
+      SetAuth(false);
     } catch (err) {
       console.log(err);
     }
@@ -47,9 +42,7 @@ function ReservationContext({ children }) {
         setSelected,
         reset,
         user,
-
         Setuser,
-        handelLogin,
         handelLogout,
       }}
     >

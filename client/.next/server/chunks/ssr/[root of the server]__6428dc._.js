@@ -136,6 +136,7 @@ var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_
 __turbopack_esm__({
     "Login": (()=>Login),
     "Logout": (()=>Logout),
+    "createBooking": (()=>createBooking),
     "getCabin": (()=>getCabin),
     "getCabins": (()=>getCabins),
     "getUser": (()=>getUser),
@@ -166,6 +167,7 @@ async function singUp(data) {
     const res = await api.post(`/auth/signup`, data);
 }
 async function Login(data) {
+    console.log(data);
     const res = await api.post(`/auth/login`, data);
     console.log(res);
 }
@@ -175,6 +177,10 @@ async function Logout() {
 async function getUser() {
     const res = await api.get(`/auth/current`);
     return res.data;
+}
+async function createBooking(data) {
+    const res = await api.post("bookings", data);
+    console.log(res);
 }
 }}),
 "[project]/app/_components/Navigation.js [app-ssr] (ecmascript)": ((__turbopack_context__) => {
@@ -256,9 +262,7 @@ __turbopack_esm__({
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$_lib$2f$apiService$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/app/_lib/apiService.js [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/navigation.js [app-ssr] (ecmascript)");
 "use client";
-;
 ;
 ;
 ;
@@ -270,17 +274,8 @@ const ReservationContextProvider = /*#__PURE__*/ (0, __TURBOPACK__imported__modu
 function ReservationContext({ children }) {
     const [selected, setSelected] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(initailStae);
     const [user, Setuser] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])({});
+    const [auth, SetAuth] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const reset = ()=>setSelected(null);
-    async function handelLogin(email, password) {
-        try {
-            await (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$_lib$2f$apiService$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Login"])({
-                email,
-                password
-            });
-        } catch (err) {
-            console.log(err);
-        }
-    }
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(function() {
         async function getCurrentUser() {
             try {
@@ -291,11 +286,14 @@ function ReservationContext({ children }) {
             }
         }
         getCurrentUser();
-    }, []);
+    }, [
+        Setuser
+    ]);
     async function handelLogout() {
         try {
             const res = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$_lib$2f$apiService$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Logout"])();
             Setuser({});
+            SetAuth(false);
         } catch (err) {
             console.log(err);
         }
@@ -307,13 +305,12 @@ function ReservationContext({ children }) {
             reset,
             user,
             Setuser,
-            handelLogin,
             handelLogout
         },
         children: children
     }, void 0, false, {
         fileName: "[project]/app/_components/ReservationContext.js",
-        lineNumber: 44,
+        lineNumber: 39,
         columnNumber: 5
     }, this);
 }

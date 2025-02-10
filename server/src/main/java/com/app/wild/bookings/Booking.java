@@ -1,6 +1,8 @@
 package com.app.wild.bookings;
 
 
+import com.app.wild.cabins.Cabin;
+import com.app.wild.user.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -36,6 +38,10 @@ public class Booking {
     private boolean isPaid;
     @Column(name = "num_guests")
     private Integer numGuests;
-
-
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "cabin_id", nullable = false)
+    private Cabin cabin;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 }

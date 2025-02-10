@@ -3,22 +3,13 @@
     "[project]/app/cabins/[cabinId]/page": [
       "static/media/Qw3PZQNVED7rKGKxtqIqX5E_AVSJrOCfjY46_ArQbMZhLybpUVzEEQ-s.p.50598221.woff2"
     ],
-    "[project]/app/page": [
-      "static/media/Qw3PZQNVED7rKGKxtqIqX5E_AVSJrOCfjY46_ArQbMZhLybpUVzEEQ-s.p.50598221.woff2"
-    ],
-    "[project]/app/account/page": [
-      "static/media/Qw3PZQNVED7rKGKxtqIqX5E_AVSJrOCfjY46_ArQbMZhLybpUVzEEQ-s.p.50598221.woff2"
-    ],
     "[project]/app/cabins/page": [
-      "static/media/Qw3PZQNVED7rKGKxtqIqX5E_AVSJrOCfjY46_ArQbMZhLybpUVzEEQ-s.p.50598221.woff2"
-    ],
-    "[project]/app/account/reservations/page": [
       "static/media/Qw3PZQNVED7rKGKxtqIqX5E_AVSJrOCfjY46_ArQbMZhLybpUVzEEQ-s.p.50598221.woff2"
     ],
     "[project]/app/about/page": [
       "static/media/Qw3PZQNVED7rKGKxtqIqX5E_AVSJrOCfjY46_ArQbMZhLybpUVzEEQ-s.p.50598221.woff2"
     ],
-    "[project]/app/signup/page": [
+    "[project]/app/account/page": [
       "static/media/Qw3PZQNVED7rKGKxtqIqX5E_AVSJrOCfjY46_ArQbMZhLybpUVzEEQ-s.p.50598221.woff2"
     ]
   },

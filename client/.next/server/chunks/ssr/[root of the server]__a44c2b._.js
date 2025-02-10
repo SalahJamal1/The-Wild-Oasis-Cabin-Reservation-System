@@ -136,9 +136,11 @@ var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_
 __turbopack_esm__({
     "Login": (()=>Login),
     "Logout": (()=>Logout),
+    "createBooking": (()=>createBooking),
     "getCabin": (()=>getCabin),
     "getCabins": (()=>getCabins),
-    "getUser": (()=>getUser)
+    "getUser": (()=>getUser),
+    "singUp": (()=>singUp)
 });
 const { default: axios } = __turbopack_require__("[project]/node_modules/axios/dist/node/axios.cjs [app-rsc] (ecmascript)");
 const api = axios.create({
@@ -161,8 +163,13 @@ async function getCabin(id) {
         console.log(err);
     }
 }
+async function singUp(data) {
+    const res = await api.post(`/auth/signup`, data);
+}
 async function Login(data) {
+    console.log(data);
     const res = await api.post(`/auth/login`, data);
+    console.log(res);
 }
 async function Logout() {
     const res = await api.get(`/auth/logout`);
@@ -170,6 +177,10 @@ async function Logout() {
 async function getUser() {
     const res = await api.get(`/auth/current`);
     return res.data;
+}
+async function createBooking(data) {
+    const res = await api.post("bookings", data);
+    console.log(res);
 }
 }}),
 "[project]/app/about/page.js [app-rsc] (ecmascript)": ((__turbopack_context__) => {

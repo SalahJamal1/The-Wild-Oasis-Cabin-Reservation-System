@@ -126,6 +126,7 @@ var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_
 __turbopack_esm__({
     "Login": (()=>Login),
     "Logout": (()=>Logout),
+    "createBooking": (()=>createBooking),
     "getCabin": (()=>getCabin),
     "getCabins": (()=>getCabins),
     "getUser": (()=>getUser),
@@ -156,6 +157,7 @@ async function singUp(data) {
     const res = await api.post(`/auth/signup`, data);
 }
 async function Login(data) {
+    console.log(data);
     const res = await api.post(`/auth/login`, data);
     console.log(res);
 }
@@ -165,6 +167,10 @@ async function Logout() {
 async function getUser() {
     const res = await api.get(`/auth/current`);
     return res.data;
+}
+async function createBooking(data) {
+    const res = await api.post("bookings", data);
+    console.log(res);
 }
 }}),
 "[project]/app/_components/CabinCard.js [app-rsc] (ecmascript)": ((__turbopack_context__) => {

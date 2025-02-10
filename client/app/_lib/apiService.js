@@ -25,6 +25,7 @@ export async function singUp(data) {
   const res = await api.post(`/auth/signup`, data);
 }
 export async function Login(data) {
+  console.log(data);
   const res = await api.post(`/auth/login`, data);
   console.log(res);
 }
@@ -34,4 +35,8 @@ export async function Logout() {
 export async function getUser() {
   const res = await api.get(`/auth/current`);
   return res.data;
+}
+export async function createBooking(data) {
+  const res = await api.post("bookings", data);
+  console.log(res);
 }

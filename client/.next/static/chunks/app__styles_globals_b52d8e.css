@@ -588,6 +588,10 @@ img, video {
   border-radius: .5rem;
 }
 
+.rounded-md {
+  border-radius: .375rem;
+}
+
 .border {
   border-width: 1px;
 }
@@ -672,6 +676,16 @@ img, video {
   background-color: rgb(20 28 36 / var(--tw-bg-opacity, 1));
 }
 
+.bg-primary-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(94 130 166 / var(--tw-bg-opacity, 1));
+}
+
+.bg-primary-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(124 153 182 / var(--tw-bg-opacity, 1));
+}
+
 .object-cover {
   object-fit: cover;
 }
@@ -691,6 +705,11 @@ img, video {
 .px-10 {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
+}
+
+.px-16 {
+  padding-left: 4rem;
+  padding-right: 4rem;
 }
 
 .px-2 {
@@ -748,6 +767,11 @@ img, video {
   padding-bottom: .75rem;
 }
 
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 .py-5 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
@@ -756,6 +780,11 @@ img, video {
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .text-center {
@@ -823,6 +852,10 @@ img, video {
 
 .capitalize {
   text-transform: capitalize;
+}
+
+.tracking-wider {
+  letter-spacing: .05em;
 }
 
 .tracking-widest {

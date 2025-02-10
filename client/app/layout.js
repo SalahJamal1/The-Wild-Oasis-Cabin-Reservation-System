@@ -25,11 +25,9 @@ function RootLayout({ children }) {
       >
         <Header />
         <div className="px-8 grid flex-1">
-          <Suspense fallback={<Spinner />}>
-            <ReservationContext>
-              <main className="max-w-7xl mx-auto w-full">{children}</main>
-            </ReservationContext>
-          </Suspense>
+          <ReservationContext>
+            <main className="max-w-7xl mx-auto w-full">{children}</main>
+          </ReservationContext>
         </div>
       </body>
     </html>

@@ -1,18 +1,18 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { useReservation } from "./ReservationContext";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { Login } from "../_lib/apiService";
 
 function AccountForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { handelLogin } = useReservation();
+  const router = useRouter();
   const handelSubmit = async (e) => {
     e.preventDefault();
     if (!email && !password) return;
-    await handelLogin(email, password);
-    location.reload();
+    await Login({ email, password });
+    router.push("/account");
   };
 
   return (

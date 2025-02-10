@@ -26,13 +26,12 @@ function SignUpForm() {
     const handelSubmit = async (e)=>{
         e.preventDefault();
         if (!firstName && !lastName && !email && !password) return;
-        const res = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$_lib$2f$apiService$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["singUp"])({
+        await (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$_lib$2f$apiService$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["singUp"])({
             firstName,
             lastName,
             email,
             password
         });
-        console.log(res);
         alert("success");
         router.push("/account");
     };
@@ -45,7 +44,7 @@ function SignUpForm() {
                 children: "first name"
             }, void 0, false, {
                 fileName: "[project]/app/_components/SignUpForm.js",
-                lineNumber: 24,
+                lineNumber: 23,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -57,7 +56,7 @@ function SignUpForm() {
                 onChange: (e)=>SetfirstName(e.target.value)
             }, void 0, false, {
                 fileName: "[project]/app/_components/SignUpForm.js",
-                lineNumber: 27,
+                lineNumber: 26,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
@@ -65,7 +64,7 @@ function SignUpForm() {
                 children: "last name"
             }, void 0, false, {
                 fileName: "[project]/app/_components/SignUpForm.js",
-                lineNumber: 35,
+                lineNumber: 34,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -77,7 +76,7 @@ function SignUpForm() {
                 onChange: (e)=>SetlastName(e.target.value)
             }, void 0, false, {
                 fileName: "[project]/app/_components/SignUpForm.js",
-                lineNumber: 38,
+                lineNumber: 37,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
@@ -85,7 +84,7 @@ function SignUpForm() {
                 children: "Email address"
             }, void 0, false, {
                 fileName: "[project]/app/_components/SignUpForm.js",
-                lineNumber: 46,
+                lineNumber: 45,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -97,7 +96,7 @@ function SignUpForm() {
                 onChange: (e)=>Setemail(e.target.value)
             }, void 0, false, {
                 fileName: "[project]/app/_components/SignUpForm.js",
-                lineNumber: 49,
+                lineNumber: 48,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
@@ -105,7 +104,7 @@ function SignUpForm() {
                 children: "Password"
             }, void 0, false, {
                 fileName: "[project]/app/_components/SignUpForm.js",
-                lineNumber: 57,
+                lineNumber: 56,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -117,7 +116,7 @@ function SignUpForm() {
                 onChange: (e)=>Setpassword(e.target.value)
             }, void 0, false, {
                 fileName: "[project]/app/_components/SignUpForm.js",
-                lineNumber: 58,
+                lineNumber: 57,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -127,18 +126,18 @@ function SignUpForm() {
                     children: "SIGN UP"
                 }, void 0, false, {
                     fileName: "[project]/app/_components/SignUpForm.js",
-                    lineNumber: 67,
+                    lineNumber: 66,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/_components/SignUpForm.js",
-                lineNumber: 66,
+                lineNumber: 65,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/_components/SignUpForm.js",
-        lineNumber: 23,
+        lineNumber: 22,
         columnNumber: 5
     }, this);
 }
