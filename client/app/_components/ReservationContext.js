@@ -9,29 +9,33 @@ function ReservationContext({ children }) {
   const [selected, setSelected] = useState(initailStae);
   const [user, Setuser] = useState({});
   const [auth, SetAuth] = useState(false);
+  const [loading, Setloading] = useState(true);
   const reset = () => setSelected(null);
-
-  useEffect(
-    function () {
-      async function getCurrentUser() {
-        try {
-          const data = await getUser();
-          Setuser(data);
-        } catch (err) {
-          console.log(err);
-        }
+  useEffect(function () {
+    async function getCurrentUser() {
+      Setloading(true);
+      try {
+        const data = await getUser();
+        Setuser(data);
+      } catch (err) {
+        console.log(err);
+        Setloading(false);
+      } finally {
+        Setloading(false);
       }
-      getCurrentUser();
-    },
-    [Setuser]
-  );
+    }
+    getCurrentUser();
+  }, []);
   async function handelLogout() {
+    Setloading(true);
     try {
       const res = await Logout();
       Setuser({});
       SetAuth(false);
     } catch (err) {
       console.log(err);
+    } finally {
+      Setloading(false);
     }
   }
 
@@ -44,6 +48,9 @@ function ReservationContext({ children }) {
         user,
         Setuser,
         handelLogout,
+        SetAuth,
+        loading,
+        Setloading,
       }}
     >
       {children}

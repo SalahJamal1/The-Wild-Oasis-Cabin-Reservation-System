@@ -28,7 +28,7 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(HttpMethod.GET, "/api/v1/cabins/**").permitAll()
                         .requestMatchers("/api/v1/auth/**")
-                        .permitAll().anyRequest().authenticated())
+                        .permitAll().requestMatchers("/api/v1/bookings/bookingindery").permitAll().anyRequest().authenticated())
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authenticationProvider)

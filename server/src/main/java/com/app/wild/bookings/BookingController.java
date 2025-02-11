@@ -1,8 +1,12 @@
 package com.app.wild.bookings;
 
+import com.app.wild.user.User;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
+import javax.naming.AuthenticationException;
+import java.nio.file.AccessDeniedException;
 import java.util.List;
 
 @RestController
@@ -19,6 +23,17 @@ public class BookingController {
     @GetMapping("{bookingId}")
     public Booking Booking(@PathVariable Integer bookingId) {
         return service.findById(bookingId).orElseThrow(() -> new RuntimeException("we can not found the id"));
+    }
+
+    @GetMapping("/bookingindery")
+    public List<Booking> Booking() throws AuthenticationException, AccessDeniedException {
+        Object user = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if (user instanceof User) {
+
+            return service.findBookingByUserId(((User) user).getId());
+        } else {
+            throw new RuntimeException("Your are not authenticated");
+        }
     }
 
     @DeleteMapping("{bookingId}")
@@ -39,7 +54,6 @@ public class BookingController {
 
     @PostMapping
     public Booking createBooking(@RequestBody Booking booking) {
-        System.out.println("salah");
         return service.save(booking);
     }
 }

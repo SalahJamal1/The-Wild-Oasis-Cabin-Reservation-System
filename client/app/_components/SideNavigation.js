@@ -1,24 +1,28 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { MdHomeWork } from "react-icons/md";
+import { MdHomeWork, MdOutlineDateRange } from "react-icons/md";
 import { useReservation } from "./ReservationContext";
+import { FaUser } from "react-icons/fa6";
 
 const links = [
   {
     href: "/account",
     name: "Home",
     active: false,
+    icon: <MdHomeWork />,
   },
   {
     href: "/account/reservations",
     name: "reservations",
     active: false,
+    icon: <MdOutlineDateRange />,
   },
   {
-    href: "/",
+    href: "#",
     name: "SignOut",
     active: true,
+    icon: <FaUser />,
   },
 ];
 function SideNavigation() {
@@ -39,7 +43,7 @@ function SideNavigation() {
                 pathname === link.href ? "bg-primary-800" : ""
               }`}
             >
-              <MdHomeWork />
+              {link.icon}
               {link.name}
             </Link>
           </li>

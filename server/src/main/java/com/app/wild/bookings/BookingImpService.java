@@ -1,5 +1,7 @@
 package com.app.wild.bookings;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,6 +13,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class BookingImpService implements BookingService {
     private final BookingRepository repository;
+    private final EntityManager entityManager;
 
     @Transactional
     @Override
@@ -33,5 +36,13 @@ public class BookingImpService implements BookingService {
     @Override
     public Optional<Booking> findById(Integer id) {
         return Optional.of(repository.findById(id)).orElseThrow();
+    }
+
+    @Override
+    public List<Booking> findBookingByUserId(Integer id) {
+        TypedQuery<Booking> query = entityManager.createQuery("SELECT b FROM Booking b JOIN b.user u WHERE u.id= :id", Booking.class);
+        query.setParameter("id", id);
+
+        return query.getResultList();
     }
 }

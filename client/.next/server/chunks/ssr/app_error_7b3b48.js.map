@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///Users/salah/Downloads/wild/client/app/error.js"],"sourcesContent":["function Error({ error, reset }) {\n  console.log(error);\n  return <div>{error.message}</div>;\n}\n\nexport default Error;\n"],"names":[],"mappings":";;;;;AAAA,SAAS,MAAM,EAAE,KAAK,EAAE,KAAK,EAAE;IAC7B,QAAQ,GAAG,CAAC;IACZ,qBAAO,8OAAC;kBAAK,MAAM,OAAO;;;;;;AAC5B;uCAEe"}},
-    {"offset": {"line": 23, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
-}

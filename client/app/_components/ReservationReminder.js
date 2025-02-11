@@ -1,14 +1,7 @@
 "use client";
 import { MdOutlineClose } from "react-icons/md";
 import { useReservation } from "./ReservationContext";
-
-function formatDates(date) {
-  return Intl.DateTimeFormat("en-us", {
-    month: "long",
-    day: "numeric",
-    year: "numeric",
-  }).format(new Date(date));
-}
+import { formatDates } from "../utils/helper";
 
 function ReservationReminder() {
   const { selected, reset } = useReservation();

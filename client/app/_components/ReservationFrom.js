@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { useReservation } from "./ReservationContext";
 import { createBooking } from "../_lib/apiService";
+import { useRouter } from "next/navigation";
 
 function ReservationFrom({ cabin }) {
-  const { user, selected } = useReservation();
+  const { user, selected, reset } = useReservation();
   const [observations, Setobservations] = useState("");
   const [numGuests, SetnumGuests] = useState("");
+  const router = useRouter();
   async function handelSubmit(e) {
     e.preventDefault();
     if (!selected.from || !selected.to || !numGuests) return;
@@ -20,6 +22,8 @@ function ReservationFrom({ cabin }) {
       user: { id: user.id },
     };
     await createBooking(newBooking);
+    router.push("/account/reservations");
+    reset();
   }
   return (
     <div className="bg-primary-900">

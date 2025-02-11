@@ -3,7 +3,6 @@ package com.app.wild.auth;
 import com.app.wild.config.JwtService;
 import com.app.wild.user.Role;
 import com.app.wild.user.User;
-import com.app.wild.user.UserDto;
 import com.app.wild.user.UserRepository;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
@@ -36,8 +35,7 @@ public class AuthService {
 
         setCookie(jwt, response);
 
-        UserDto userDto = new UserDto(user.getFirstName(), user.getLastName(), user.getEmail());
-        return AuthResponse.builder().token(jwt).user(userDto).build();
+        return AuthResponse.builder().token(jwt).user(user).build();
     }
 
     public AuthResponse login(AuthLogin authLogin, HttpServletRequest request, HttpServletResponse response) {
@@ -52,8 +50,7 @@ public class AuthService {
             var user = userRepository.findByEmail(authLogin.getEmail());
             String jwt = jwtService.generateToken(user);
             setCookie(jwt, response);
-            UserDto userDto = new UserDto(user.getFirstName(), user.getLastName(), user.getEmail());
-            return AuthResponse.builder().token(jwt).user(userDto).build();
+            return AuthResponse.builder().token(jwt).user(user).build();
         } catch (AuthenticationException exc) {
             throw new RuntimeException("Invalid email or password");
         }

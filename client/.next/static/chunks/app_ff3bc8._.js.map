@@ -1,9 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///Users/salah/Downloads/wild/client/app/_lib/apiService.js"],"sourcesContent":["const { default: axios } = require(\"axios\");\n\nconst api = axios.create({\n  url: \"http://127.0.0.1:8080/api/v1\",\n  withCredentials: true,\n});\n\nexport async function getCabins() {\n  try {\n    const data = await axios(\"http://127.0.0.1:8080/api/v1/cabins\");\n    return data;\n  } catch (err) {\n    console.log(err);\n  }\n}\n"],"names":[],"mappings":";;;AAAA,MAAM,EAAE,SAAS,KAAK,EAAE;AAExB,MAAM,MAAM,MAAM,MAAM,CAAC;IACvB,KAAK;IACL,iBAAiB;AACnB;AAEO,eAAe;IACpB,IAAI;QACF,MAAM,OAAO,MAAM,MAAM;QACzB,OAAO;IACT,EAAE,OAAO,KAAK;QACZ,QAAQ,GAAG,CAAC;IACd;AACF"}},
-    {"offset": {"line": 26, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
-    {"offset": {"line": 32, "column": 0}, "map": {"version":3,"sources":["file:///Users/salah/Downloads/wild/client/app/_components/CabinList.js"],"sourcesContent":["\"use client\";\nimport { getCabins } from \"../_lib/apiService\";\n\nasync function CabinList() {\n  const cabins = await getCabins();\n  console.log(cabins);\n  return <div></div>;\n}\n\nexport default CabinList;\n"],"names":[],"mappings":";;;;AACA;AADA;;;AAGA,eAAe;IACb,MAAM,SAAS,MAAM,CAAA,GAAA,4HAAA,CAAA,YAAS,AAAD;IAC7B,QAAQ,GAAG,CAAC;IACZ,qBAAO,6LAAC;;;;;AACV;KAJe;uCAMA"}},
-    {"offset": {"line": 56, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
-}

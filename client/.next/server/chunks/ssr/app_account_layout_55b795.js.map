@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///Users/salah/Downloads/wild/client/app/account/layout.js"],"sourcesContent":["function layout({ children }) {\n  return (\n    <div>\n      <div>{children}</div>\n    </div>\n  );\n}\n\nexport default layout;\n"],"names":[],"mappings":";;;;;AAAA,SAAS,OAAO,EAAE,QAAQ,EAAE;IAC1B,qBACE,8OAAC;kBACC,cAAA,8OAAC;sBAAK;;;;;;;;;;;AAGZ;uCAEe"}},
-    {"offset": {"line": 28, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
-}

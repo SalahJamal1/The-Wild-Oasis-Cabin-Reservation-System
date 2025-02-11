@@ -34,7 +34,6 @@ public class AuthController {
     @GetMapping("/current")
     public Object getCurrentUser() {
         Object user = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        System.out.println(user);
         if (user instanceof UserDetails) {
             return user;
         } else throw new RuntimeException("you are not authenticated");

@@ -1,7 +1,7 @@
 function User({ user }) {
   return (
     <div className="ml-12">
-      <div className=" flex flex-col py-12 rounded-lg px-8 max-w-[30rem] flex-1">
+      <div className="flex flex-col py-12 rounded-lg px-8 max-w-[30rem] flex-1">
         <h2 className="text-xl text-accent-500 tracking-widest mb-8 uppercase">
           {user.firstName} ACCOUNT
         </h2>

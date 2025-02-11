@@ -3,15 +3,19 @@ import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Login } from "../_lib/apiService";
+import { useReservation } from "./ReservationContext";
 
 function AccountForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
+  const { SetAuth, Setuser } = useReservation();
   const handelSubmit = async (e) => {
     e.preventDefault();
     if (!email && !password) return;
-    await Login({ email, password });
+    const res = await Login({ email, password });
+    Setuser(res.user);
+    SetAuth(true);
     router.push("/account");
   };
 
