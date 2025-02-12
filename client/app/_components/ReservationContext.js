@@ -1,6 +1,7 @@
 "use client";
 import { createContext, useContext, useEffect, useState } from "react";
 import { getUser, Logout } from "../_lib/apiService";
+import toast from "react-hot-toast";
 
 const initailStae = { from: null, to: null };
 
@@ -30,10 +31,13 @@ function ReservationContext({ children }) {
     Setloading(true);
     try {
       const res = await Logout();
+      toast.success("Success! Your are Logout.");
+
       Setuser({});
       SetAuth(false);
     } catch (err) {
       console.log(err);
+      toast.error(err.message);
     } finally {
       Setloading(false);
     }

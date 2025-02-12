@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useReservation } from "./ReservationContext";
 import { createBooking } from "../_lib/apiService";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 function ReservationFrom({ cabin }) {
   const { user, selected, reset } = useReservation();
@@ -10,7 +11,8 @@ function ReservationFrom({ cabin }) {
   const router = useRouter();
   async function handelSubmit(e) {
     e.preventDefault();
-    if (!selected.from || !selected.to || !numGuests) return;
+    if (!selected.from || !selected.to || !numGuests)
+      return toast.error("the filed is required".toUpperCase());
     const newBooking = {
       startDate: selected.from,
       endDate: selected.to,
@@ -21,9 +23,15 @@ function ReservationFrom({ cabin }) {
       cabin: { id: cabin.id },
       user: { id: user.id },
     };
-    await createBooking(newBooking);
-    router.push("/account/reservations");
-    reset();
+    try {
+      await createBooking(newBooking);
+      toast.success("Success! You are booked.");
+      router.push("/account/reservations");
+      reset();
+    } catch (err) {
+      console.log(err);
+      toast.error(err.message);
+    }
   }
   return (
     <div className="bg-primary-900">

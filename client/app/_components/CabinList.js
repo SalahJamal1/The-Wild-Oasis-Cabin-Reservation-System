@@ -4,6 +4,7 @@ import { CabinCard } from "./CabinCard";
 
 async function CabinList({ filter }) {
   const cabins = await getCabins();
+
   let displayCabins;
   if (filter === "all") displayCabins = cabins;
   else if (filter === "small")

@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 const { default: axios } = require("axios");
 
 const api = axios.create({
@@ -6,12 +7,9 @@ const api = axios.create({
 });
 
 export async function getCabins() {
-  try {
-    const data = await api.get("cabins");
-    return data.data;
-  } catch (err) {
-    console.log(err);
-  }
+  const data = await api.get("cabins");
+
+  return data.data;
 }
 export async function getCabin(id) {
   try {

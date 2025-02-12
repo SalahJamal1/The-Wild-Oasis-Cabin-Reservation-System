@@ -9,6 +9,7 @@ import BookingMessage from "./BookingMessage";
 import Spinner from "./Spinner";
 import { useReservation } from "./ReservationContext";
 import LoginMessage from "./LoginMessage";
+import toast from "react-hot-toast";
 
 function getTotal(booking) {
   return (
@@ -25,6 +26,7 @@ function Bookings() {
         Setloading(true);
         try {
           const bookings = await getBookingByuser();
+
           SetBookings(bookings);
         } catch (err) {
           console.log(err);
@@ -41,9 +43,11 @@ function Bookings() {
     Setloading(true);
     try {
       await deleteBooking(id);
+      toast.success("Success! Your booked deleted.");
       SetBookings((booking) => booking.filter((b) => b.id !== id));
     } catch (err) {
       console.log(err);
+      toast.error(err.message);
     } finally {
       Setloading(false);
     }

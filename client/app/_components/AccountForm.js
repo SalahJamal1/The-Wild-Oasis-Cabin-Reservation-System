@@ -4,20 +4,48 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Login } from "../_lib/apiService";
 import { useReservation } from "./ReservationContext";
+import toast from "react-hot-toast";
 
 function AccountForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const router = useRouter();
   const { SetAuth, Setuser } = useReservation();
+
   const handelSubmit = async (e) => {
     e.preventDefault();
     if (!email && !password) return;
-    const res = await Login({ email, password });
-    Setuser(res.user);
-    SetAuth(true);
-    router.push("/account");
+    try {
+      const res = await Login({ email, password });
+      toast.success("Login Successfully");
+      Setuser(res.user);
+      SetAuth(true);
+      router.push("/account");
+    } catch (err) {
+      console.log(err);
+      if (err.response.data.message)
+        return toast.error(err.response.data.message);
+      else setError(err.message);
+    }
   };
+  if (error)
+    return (
+      <div className="flex flex-col items-center gap-3">
+        <p className="text-xl tracking-wider">{error}</p>
+        <button
+          onClick={() => {
+            setEmail("");
+            setPassword("");
+            setError("");
+            router.refresh();
+          }}
+          className="bg-accent-500 text-primary-800 font-semibold text-xl px-8 py-6"
+        >
+          Try again
+        </button>
+      </div>
+    );
 
   return (
     <form method="POST" onSubmit={handelSubmit}>
