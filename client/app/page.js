@@ -11,7 +11,7 @@ function Page() {
         placeholder="blur"
         className="object-cover object-top"
       />
-      <div className="text-center z-10 relative">
+      <div className="text-center relative">
         <h2 className="text-7xl block mb-10">Welcome to paradise.</h2>
         <Link
           className="bg-accent-500 text-primary-800 font-semibold text-xl px-8 py-6"

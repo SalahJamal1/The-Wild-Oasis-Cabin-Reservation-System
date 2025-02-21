@@ -1,1 +1,25 @@
-{"pages":{},"app":{"/Users/salah/Downloads/wild/client/app/layout":["static/media/29a4c6208d1f756c-s.p.woff2"]},"appUsingSizeAdjust":true,"pagesUsingSizeAdjust":false}
+{
+  "app": {
+    "[project]/app/page": [
+      "static/media/Qw3PZQNVED7rKGKxtqIqX5E_AVSJrOCfjY46_ArQbMZhLybpUVzEEQ-s.p.50598221.woff2"
+    ],
+    "[project]/app/cabins/page": [
+      "static/media/Qw3PZQNVED7rKGKxtqIqX5E_AVSJrOCfjY46_ArQbMZhLybpUVzEEQ-s.p.50598221.woff2"
+    ],
+    "[project]/app/cabins/[cabinId]/page": [
+      "static/media/Qw3PZQNVED7rKGKxtqIqX5E_AVSJrOCfjY46_ArQbMZhLybpUVzEEQ-s.p.50598221.woff2"
+    ],
+    "[project]/app/login/page": [
+      "static/media/Qw3PZQNVED7rKGKxtqIqX5E_AVSJrOCfjY46_ArQbMZhLybpUVzEEQ-s.p.50598221.woff2"
+    ],
+    "[project]/app/account/page": [
+      "static/media/Qw3PZQNVED7rKGKxtqIqX5E_AVSJrOCfjY46_ArQbMZhLybpUVzEEQ-s.p.50598221.woff2"
+    ],
+    "[project]/app/account/reservations/page": [
+      "static/media/Qw3PZQNVED7rKGKxtqIqX5E_AVSJrOCfjY46_ArQbMZhLybpUVzEEQ-s.p.50598221.woff2"
+    ]
+  },
+  "appUsingSizeAdjust": true,
+  "pages": {},
+  "pagesUsingSizeAdjust": false
+}

@@ -3,6 +3,7 @@ import "@/app/_styles/globals.css";
 import { Josefin_Sans } from "next/font/google";
 import ReservationContext from "./_components/ReservationContext";
 import { Toaster } from "react-hot-toast";
+import Spinner from "./_components/Spinner";
 export const metadata = {
   title: {
     template: "%s - The Wild Oasis",
@@ -18,7 +19,7 @@ function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${josefin.className} bg-primary-950 text-primary-100 min-h-screen relative`}
+        className={`${josefin.className} bg-primary-950 text-primary-100 relative grid grid-rows-[16vh,1fr] h-screen`}
       >
         <Header />
         <Toaster
@@ -44,7 +45,7 @@ function RootLayout({ children }) {
           }}
         />
 
-        <div className="px-8 grid flex-1">
+        <div className="px-8 grid flex-1 overflow-y-scroll">
           <ReservationContext>
             <main className="max-w-7xl mx-auto w-full">{children}</main>
           </ReservationContext>

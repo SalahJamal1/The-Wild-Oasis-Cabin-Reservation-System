@@ -27,7 +27,7 @@ const links = [
 ];
 function SideNavigation() {
   const pathname = usePathname();
-  const { handelLogout } = useReservation();
+  const { handelLogout, user } = useReservation();
 
   return (
     <div className="border-r border-primary-800 h-screen py-12">
@@ -35,7 +35,9 @@ function SideNavigation() {
         {links.map((link) => (
           <li
             key={link.name}
-            onClick={link.active ? () => handelLogout() : () => {}}
+            onClick={
+              link.active && user.firstName ? () => handelLogout() : () => {}
+            }
           >
             <Link
               href={link.href}

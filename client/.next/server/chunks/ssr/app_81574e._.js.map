@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///Users/salah/Downloads/wild/client/app/_components/Spinner.js"],"sourcesContent":["function Spinner() {\n  return (\n    <div className=\"flex  justify-center w-full h-full absolute -translate-x-[50%] left-[50%] top-[30%]\">\n      <div className=\"loader\"></div>\n    </div>\n  );\n}\n\nexport default Spinner;\n"],"names":[],"mappings":";;;;;AAAA,SAAS;IACP,qBACE,8OAAC;QAAI,WAAU;kBACb,cAAA,8OAAC;YAAI,WAAU;;;;;;;;;;;AAGrB;uCAEe"}},
+    {"offset": {"line": 29, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
+    {"offset": {"line": 35, "column": 0}, "map": {"version":3,"sources":["file:///Users/salah/Downloads/wild/client/app/loading.js"],"sourcesContent":["import Spinner from \"@/app/_components/Spinner\";\n\nfunction Loading() {\n  return (\n    <div>\n      <Spinner />\n    </div>\n  );\n}\n\nexport default Loading;\n"],"names":[],"mappings":";;;;AAAA;;;AAEA,SAAS;IACP,qBACE,8OAAC;kBACC,cAAA,8OAAC,6HAAA,CAAA,UAAO;;;;;;;;;;AAGd;uCAEe"}},
+    {"offset": {"line": 56, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

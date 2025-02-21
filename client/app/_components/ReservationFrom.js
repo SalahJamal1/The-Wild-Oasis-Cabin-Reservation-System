@@ -8,11 +8,14 @@ function ReservationFrom({ cabin }) {
   const { user, selected, reset } = useReservation();
   const [observations, Setobservations] = useState("");
   const [numGuests, SetnumGuests] = useState("");
+  const [loading, Setloading] = useState(false);
   const router = useRouter();
   async function handelSubmit(e) {
     e.preventDefault();
+    Setloading(true);
     if (!selected.from || !selected.to || !numGuests)
       return toast.error("the filed is required".toUpperCase());
+
     const newBooking = {
       startDate: selected.from,
       endDate: selected.to,
@@ -31,6 +34,8 @@ function ReservationFrom({ cabin }) {
     } catch (err) {
       console.log(err);
       toast.error(err.message);
+    } finally {
+      Setloading(false);
     }
   }
   return (
@@ -65,8 +70,11 @@ function ReservationFrom({ cabin }) {
           onChange={(e) => Setobservations(e.target.value)}
         />
         <div className="flex items-center justify-end">
-          <button className="bg-accent-500 text-primary-800 font-semibold text-xl px-8 py-3">
-            Reserve now
+          <button
+            disabled={loading}
+            className="bg-accent-500 text-primary-800 font-semibold text-xl px-8 py-3"
+          >
+            {loading ? "Loading..." : "Reserve now"}
           </button>
         </div>
       </form>

@@ -24,7 +24,7 @@ function AccountForm() {
       router.push("/account");
     } catch (err) {
       console.log(err);
-      if (err.response.data.message)
+      if (err?.response?.data?.message)
         return toast.error(err.response.data.message);
       else setError(err.message);
     }

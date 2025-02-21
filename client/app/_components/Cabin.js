@@ -6,7 +6,7 @@ import Logo from "@/app/_components/Logo";
 
 function Cabin({ cabin }) {
   return (
-    <div className="border border-primary-800 grid grid-cols-[3fr_4fr] px-10 py-3 my-8 ">
+    <div className="border border-primary-800 grid grid-cols-[3fr_4fr] px-10 py-3 my-8">
       <div className="relative aspect-square scale-y-[1.15] -translate-x-12">
         <Image
           fill

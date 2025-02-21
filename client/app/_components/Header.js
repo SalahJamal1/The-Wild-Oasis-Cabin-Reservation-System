@@ -1,7 +1,5 @@
-import { Suspense } from "react";
 import Logo from "./Logo";
 import Navigation from "@/app/_components/Navigation";
-import Spinner from "./Spinner";
 
 function Header() {
   return (
