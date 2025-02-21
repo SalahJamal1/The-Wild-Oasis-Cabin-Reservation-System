@@ -2,10 +2,11 @@
 node_modules/
 
 HELP.md
+
+# استثناء target ولكن السماح بمجلدات Java في src
 target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+!**/src/main/java/**/*
+!**/src/test/java/**/*
 
 ### STS ###
 .apt_generated
@@ -28,9 +29,11 @@ target/
 /dist/
 /nbdist/
 /.nb-gradle/
+
+# استثناء build ولكن السماح بمجلدات Java في src
 build/
-!**/src/main/**/build/
-!**/src/test/**/build/
+!**/src/main/java/**/*
+!**/src/test/java/**/*
 
 ### VS Code ###
 .vscode/
