@@ -36,7 +36,7 @@ function SideNavigation() {
           <li
             key={link.name}
             onClick={
-              link.active && user.firstName ? () => handelLogout() : () => {}
+              link.active && user?.firstName ? () => handelLogout() : () => {}
             }
           >
             <Link

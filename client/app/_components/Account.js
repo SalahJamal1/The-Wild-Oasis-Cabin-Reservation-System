@@ -11,7 +11,7 @@ function Account() {
     <>
       {loading ? (
         <Spinner />
-      ) : user.firstName ? (
+      ) : user?.firstName ? (
         <User user={user} />
       ) : (
         <LoginMessage />
