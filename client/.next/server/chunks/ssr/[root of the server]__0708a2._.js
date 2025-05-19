@@ -100,7 +100,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 ;
 const { default: axios } = __turbopack_require__("[project]/node_modules/axios/dist/node/axios.cjs [app-rsc] (ecmascript)");
 const api = axios.create({
-    baseURL: "http://127.0.0.1:8080/api/v1/",
+    baseURL: "https://wild-56d7d47b4341.herokuapp.com/api/v1/",
     withCredentials: true
 });
 async function getCabins() {
