@@ -167,12 +167,8 @@ async function singUp(data) {
     const res = await api.post(`/auth/signup`, data);
 }
 async function Login(data) {
-    try {
-        const res = await api.post(`/auth/login`, data);
-        return res.data;
-    } catch (err) {
-        console.log(err);
-    }
+    const res = await api.post(`/auth/login`, data);
+    return res.data;
 }
 async function Logout() {
     const res = await api.get(`/auth/logout`);

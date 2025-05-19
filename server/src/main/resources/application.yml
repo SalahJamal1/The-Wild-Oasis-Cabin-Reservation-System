@@ -1,9 +1,13 @@
+server:
+  port: ${PORT:8080}
+
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/wild_db
-    username: root
-    password: hello1996
+    url: jdbc:mysql://sql12.freesqldatabase.com:3306/sql12779611?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC&useSSL=false
+    username: sql12779611
+    password: fVIrRiGB8c
     driver-class-name: com.mysql.cj.jdbc.Driver
+
   jpa:
     hibernate:
       ddl-auto: update
