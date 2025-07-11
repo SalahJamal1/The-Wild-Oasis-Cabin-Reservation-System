@@ -1,10 +1,8 @@
-server:
-  port: ${PORT:8080}
 spring:
   datasource:
-    url: ${JDBC_DATABASE_URL}
-    username: ${JDBC_DATABASE_USERNAME}
-    password: ${JDBC_DATABASE_PASSWORD}
+    url: jdbc:mysql://localhost/wild_db
+    username: root
+    password: hello1996
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
@@ -13,6 +11,3 @@ spring:
     show-sql: true
     database: mysql
     database-platform: org.hibernate.dialect.MySQL8Dialect
-    hikari:
-      maximum-pool-size: 3
-      minimum-idle: 1

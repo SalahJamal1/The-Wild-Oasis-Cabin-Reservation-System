@@ -23,11 +23,9 @@ function ReservationFrom({ cabin }) {
       observations,
       isPaid: true,
       numGuests,
-      cabin: { id: cabin.id },
-      user: { id: user.id },
     };
     try {
-      await createBooking(newBooking);
+      await createBooking(newBooking, cabin.id);
       toast.success("Success! You are booked.");
       router.push("/account/reservations");
       reset();

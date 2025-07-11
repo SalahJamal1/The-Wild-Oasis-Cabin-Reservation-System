@@ -9,7 +9,8 @@ import java.util.List;
 @RequestMapping("/api/v1/cabins")
 @RequiredArgsConstructor
 public class CabinController {
-    private final CabinService service;
+    private final CabinImpService service;
+    private final CabinMapper mapper;
 
     @GetMapping
     public List<Cabin> cabins() {
@@ -29,10 +30,9 @@ public class CabinController {
     }
 
     @PatchMapping("{cabinId}")
-    public Cabin updateCabin(@PathVariable Integer cabinId, @RequestBody Cabin cabin1) {
+    public Cabin updateCabin(@PathVariable Integer cabinId, @RequestBody Cabin entity) {
         Cabin cabin = service.findById(cabinId).orElseThrow(() -> new RuntimeException("we can not found the id"));
-        cabin1.setId(cabinId);
-        cabin = cabin1;
+        mapper.updateCabin(entity, cabin);
         return service.save(cabin);
     }
 

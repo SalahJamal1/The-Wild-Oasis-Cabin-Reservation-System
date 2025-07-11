@@ -2,7 +2,8 @@ import { notFound } from "next/navigation";
 const { default: axios } = require("axios");
 
 const api = axios.create({
-  baseURL: "https://wild-56d7d47b4341.herokuapp.com/api/v1/",
+  baseURL: "http://localhost:8080/api/v1/",
+  // baseURL: "https://wild-56d7d47b4341.herokuapp.com/api/v1/",
   withCredentials: true,
 });
 
@@ -30,12 +31,11 @@ export async function Logout() {
   const res = await api.get(`/auth/logout`);
 }
 export async function getUser() {
-  const res = await api.get(`/auth/current`);
+  const res = await api.get(`/auth/me`);
   return res.data;
 }
-export async function createBooking(data) {
-  const res = await api.post("bookings", data);
-  console.log(res);
+export async function createBooking(data, cabinId) {
+  const res = await api.post(`bookings/${cabinId}`, data);
 }
 export async function getBookingByuser() {
   const res = await api.get("/bookings/bookingindery");

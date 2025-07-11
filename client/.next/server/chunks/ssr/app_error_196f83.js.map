@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///Users/salah/Desktop/wild/client/app/error.js"],"sourcesContent":["\"use client\";\n\nfunction Error({ error, reset }) {\n  console.log(error);\n  return (\n    <div className=\"text-center mt-24\">\n      <h2 className=\"text-4xl block mb-10\">{error.message}</h2>\n      <button\n        onClick={reset}\n        className=\"bg-accent-500 text-primary-800 font-semibold text-xl px-8 py-6\"\n      >\n        Try again\n      </button>\n    </div>\n  );\n}\n\nexport default Error;\n"],"names":[],"mappings":";;;;AAAA;;AAEA,SAAS,MAAM,EAAE,KAAK,EAAE,KAAK,EAAE;IAC7B,QAAQ,GAAG,CAAC;IACZ,qBACE,8OAAC;QAAI,WAAU;;0BACb,8OAAC;gBAAG,WAAU;0BAAwB,MAAM,OAAO;;;;;;0BACnD,8OAAC;gBACC,SAAS;gBACT,WAAU;0BACX;;;;;;;;;;;;AAKP;uCAEe"}},
-    {"offset": {"line": 43, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
-}

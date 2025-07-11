@@ -22,19 +22,17 @@ import java.util.List;
 public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private Integer id;
-    @Column(name = "first_name")
+
     private String firstName;
-    @Column(name = "last_name")
+
     private String lastName;
-    @Column(name = "email", unique = true)
+
     @NotBlank
     private String email;
     @Enumerated(EnumType.STRING)
-    @Column(name = "role")
-    private Role role = Role.ROLE_USER;
-    @Column(name = "password")
+    private Role role;
+
     private String password;
 
     @Override

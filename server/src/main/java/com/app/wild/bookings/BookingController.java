@@ -1,8 +1,10 @@
 package com.app.wild.bookings;
 
+import com.app.wild.cabins.Cabin;
+import com.app.wild.cabins.CabinImpService;
 import com.app.wild.user.User;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 import javax.naming.AuthenticationException;
@@ -13,7 +15,9 @@ import java.util.List;
 @RequestMapping("/api/v1/bookings")
 @RequiredArgsConstructor
 public class BookingController {
-    private final BookingService service;
+    private final BookingImpService service;
+    private final CabinImpService cabinImpService;
+    private final BookingMapper mapper;
 
     @GetMapping
     public List<Booking> Bookings() {
@@ -26,11 +30,10 @@ public class BookingController {
     }
 
     @GetMapping("/bookingindery")
-    public List<Booking> Booking() throws AuthenticationException, AccessDeniedException {
-        Object user = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+    public List<Booking> Booking(@AuthenticationPrincipal User user) throws AuthenticationException, AccessDeniedException {
         if (user instanceof User) {
 
-            return service.findBookingByUserId(((User) user).getId());
+            return service.findByUserId(user.getId());
         } else {
             throw new RuntimeException("Your are not authenticated");
         }
@@ -44,16 +47,20 @@ public class BookingController {
     }
 
     @PatchMapping("{bookingId}")
-    public Booking updateBooking(@PathVariable Integer bookingId, @RequestBody Booking booking1) {
+    public Booking updateBooking(@PathVariable Integer bookingId, @RequestBody Booking entity) {
         Booking booking = service.findById(bookingId).orElseThrow(() -> new RuntimeException("we can not found the id"));
-        booking1.setId(bookingId);
-        booking1.setCreatedAt(booking.getCreatedAt());
-        booking = booking1;
+        mapper.updateBooking(entity, booking);
         return service.save(booking);
     }
 
-    @PostMapping
-    public Booking createBooking(@RequestBody Booking booking) {
+    @PostMapping("{cabinId}")
+    public Booking createBooking(@AuthenticationPrincipal User user, @RequestBody Booking booking, @PathVariable Integer cabinId) {
+        Cabin cabin = cabinImpService.findById(cabinId).orElseThrow(() -> new RuntimeException("we can not found the id"));
+        if (user == null) {
+            throw new RuntimeException("Your are not authenticated");
+        }
+        booking.setCabin(cabin);
+        booking.setUser(user);
         return service.save(booking);
     }
 }

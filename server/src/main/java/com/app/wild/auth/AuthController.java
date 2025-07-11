@@ -31,8 +31,8 @@ public class AuthController {
         return ResponseEntity.status(HttpStatus.OK).body("logout done");
     }
 
-    @GetMapping("/current")
-    public Object getCurrentUser() {
+    @GetMapping("/me")
+    public Object getMe() {
         Object user = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         if (user instanceof UserDetails) {
             return user;

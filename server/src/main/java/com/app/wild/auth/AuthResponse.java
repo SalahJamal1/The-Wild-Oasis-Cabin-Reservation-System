@@ -1,6 +1,6 @@
 package com.app.wild.auth;
 
-import com.app.wild.user.User;
+import com.app.wild.user.dto.UserDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,5 +12,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class AuthResponse {
     private String token;
-    private User user;
+    private UserDto user;
 }
