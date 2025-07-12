@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///Users/salah/Downloads/Wild-Oasis/client/app/not-found.js"],"sourcesContent":["import Link from \"next/link\";\n\nfunction NotFound() {\n  return (\n    <div className=\"text-center mt-24\">\n      <h2 className=\"text-4xl block mb-10\">Page Not Found 🤯</h2>\n      <Link\n        className=\"bg-accent-500 text-primary-800 font-semibold text-xl px-8 py-6\"\n        href=\"/\"\n      >\n        Go back home\n      </Link>\n    </div>\n  );\n}\n\nexport default NotFound;\n"],"names":[],"mappings":";;;;AAAA;;;AAEA,SAAS;IACP,qBACE,8OAAC;QAAI,WAAU;;0BACb,8OAAC;gBAAG,WAAU;0BAAuB;;;;;;0BACrC,8OAAC,4JAAA,CAAA,UAAI;gBACH,WAAU;gBACV,MAAK;0BACN;;;;;;;;;;;;AAKP;uCAEe"}},
-    {"offset": {"line": 43, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
-}
