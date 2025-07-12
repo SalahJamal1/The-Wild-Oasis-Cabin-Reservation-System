@@ -25,9 +25,9 @@ function Bookings() {
       async function getBookings() {
         Setloading(true);
         try {
-          const bookings = await getBookingByuser();
+          const data = await getBookingByuser();
 
-          SetBookings(bookings);
+          SetBookings(data.data);
         } catch (err) {
           console.log(err);
         } finally {

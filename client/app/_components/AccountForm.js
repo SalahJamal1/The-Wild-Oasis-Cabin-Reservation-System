@@ -19,7 +19,7 @@ function AccountForm() {
     try {
       const res = await Login({ email, password });
       toast.success("Login Successfully");
-      Setuser(res?.user);
+      Setuser(res?.data.user);
       SetAuth(true);
       router.push("/account");
     } catch (err) {

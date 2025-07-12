@@ -17,7 +17,7 @@ function ReservationContext({ children }) {
       Setloading(true);
       try {
         const data = await getUser();
-        Setuser(data);
+        Setuser(data.data);
       } catch (err) {
         console.log(err);
         Setloading(false);
