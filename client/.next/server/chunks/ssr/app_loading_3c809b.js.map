@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///Users/salah/Downloads/Wild-Oasis/client/app/loading.js"],"sourcesContent":["import Spinner from \"@/app/_components/Spinner\";\n\nfunction Loading() {\n  return (\n    <div>\n      <Spinner />\n    </div>\n  );\n}\n\nexport default Loading;\n"],"names":[],"mappings":";;;;AAAA;;;AAEA,SAAS;IACP,qBACE,8OAAC;kBACC,cAAA,8OAAC,6HAAA,CAAA,UAAO;;;;;;;;;;AAGd;uCAEe"}},
+    {"offset": {"line": 28, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}
