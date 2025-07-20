@@ -1,4 +1,3 @@
-import { notFound } from "next/navigation";
 const { default: axios } = require("axios");
 
 const api = axios.create({
