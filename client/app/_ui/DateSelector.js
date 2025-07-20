@@ -2,7 +2,7 @@
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/style.css";
 import { formDate } from "../utils/helper";
-import { useReservation } from "./ReservationContext";
+import { useReservation } from "../context/ReservationContext";
 
 function DateSelector({ cabin }) {
   const { selected, setSelected, reset } = useReservation();

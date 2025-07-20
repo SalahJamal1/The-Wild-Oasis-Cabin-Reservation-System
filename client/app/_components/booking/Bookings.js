@@ -1,15 +1,15 @@
 "use client";
 import { useEffect, useState } from "react";
-import { deleteBooking, getBookingByuser } from "../_lib/apiService";
+import { deleteBooking, getBookingByuser } from "@/app/_lib/apiService";
 import Image from "next/image";
-import { formatDates, formDate } from "../utils/helper";
+import { formatDates, formDate } from "@/app/utils/helper";
 import { FaEdit } from "react-icons/fa";
 import { RiDeleteBinFill } from "react-icons/ri";
 import BookingMessage from "./BookingMessage";
-import Spinner from "./Spinner";
-import { useReservation } from "./ReservationContext";
-import LoginMessage from "./LoginMessage";
+import Spinner from "@/app/_ui/Spinner";
+import LoginMessage from "@/app/_components/login/LoginMessage";
 import toast from "react-hot-toast";
+import { useReservation } from "@/app/context/ReservationContext";
 
 function getTotal(booking) {
   return (

@@ -1,9 +1,9 @@
 "use client";
-import DateSelector from "./DateSelector";
-import LoginMessage from "./LoginMessage";
-import { useReservation } from "./ReservationContext";
-import ReservationFrom from "./ReservationFrom";
-import Spinner from "./Spinner";
+import DateSelector from "@/app/_ui/DateSelector";
+import ReservationForm from "./ReservationForm";
+import LoginMessage from "../login/LoginMessage";
+import { useReservation } from "@/app/context/ReservationContext";
+import Spinner from "@/app/_ui/Spinner";
 
 function Reservation({ cabin }) {
   const { user, loading } = useReservation();
@@ -14,7 +14,7 @@ function Reservation({ cabin }) {
         {loading ? (
           <Spinner />
         ) : user.firstName ? (
-          <ReservationFrom cabin={cabin} />
+          <ReservationForm cabin={cabin} />
         ) : (
           <LoginMessage />
         )}

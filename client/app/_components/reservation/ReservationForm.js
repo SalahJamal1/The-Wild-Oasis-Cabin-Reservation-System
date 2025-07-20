@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { useReservation } from "./ReservationContext";
-import { createBooking } from "../_lib/apiService";
+import { useReservation } from "@/app/context/ReservationContext";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
+import { createBooking } from "@/app/_lib/apiService";
 
-function ReservationFrom({ cabin }) {
+function ReservationForm({ cabin }) {
   const { user, selected, reset } = useReservation();
   const [observations, Setobservations] = useState("");
   const [numGuests, SetnumGuests] = useState("");
@@ -80,4 +80,4 @@ function ReservationFrom({ cabin }) {
   );
 }
 
-export default ReservationFrom;
+export default ReservationForm;

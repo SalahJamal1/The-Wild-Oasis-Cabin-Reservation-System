@@ -1,6 +1,6 @@
 "use client";
 import { useReducer, useState } from "react";
-import { singUp } from "../_lib/apiService";
+import { singUp } from "../../_lib/apiService";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 
@@ -82,16 +82,20 @@ function SignUpForm() {
     }
   };
   return (
-    <form method="POST" onSubmit={handelSubmit}>
+    <form
+      method="POST"
+      onSubmit={handelSubmit}
+      className="grid grid-cols-2 gap-6"
+    >
       <div>
-        <label className="block text-primary-200 capitalize mb-2">
+        <label className="block text-primary-200 capitalize mb-2 text-[18px]">
           first name
         </label>
         <input
           placeholder="first name"
           // required
           type="text"
-          className="block w-full rounded-full px-4 py-1 mb-2 text-primary-800"
+          className="block w-full rounded-lg px-4 py-3  text-primary-800"
           name="firstName"
           value={formData.firstName}
           onChange={onChange}
@@ -99,14 +103,14 @@ function SignUpForm() {
         {errors.firstName && <p className="text-red-500">{errors.firstName}</p>}
       </div>
       <div>
-        <label className="block text-primary-200 capitalize mb-2">
+        <label className="block text-primary-200 capitalize mb-2 tracking-wider text-[18px]">
           last name
         </label>
         <input
           placeholder="last name"
           // required
           type="text"
-          className="block w-full rounded-full px-4 py-1 mb-2 text-primary-800"
+          className="block w-full rounded-lg px-4 py-3  text-primary-800"
           name="lastName"
           value={formData.lastName}
           onChange={onChange}
@@ -114,14 +118,14 @@ function SignUpForm() {
         {errors.lastName && <p className="text-red-500">{errors.lastName}</p>}
       </div>
       <div>
-        <label className="block text-primary-200 capitalize mb-2">
+        <label className="block text-primary-200 capitalize mb-2 tracking-wider text-[18px]">
           Email address
         </label>
         <input
           placeholder="email"
           // required
           type="email"
-          className="block w-full rounded-full px-4 py-1 mb-2 text-primary-800"
+          className="block w-full rounded-lg px-4 py-3  text-primary-800"
           name="email"
           value={formData.email}
           onChange={onChange}
@@ -129,26 +133,27 @@ function SignUpForm() {
         {errors.email && <p className="text-red-500">{errors.email}</p>}
       </div>
       <div className="mb-8">
-        <label className="text-primary-200 capitalize mb-2">Password</label>
+        <label className="block text-primary-200 capitalize mb-2 tracking-wider text-[18px]">
+          Password
+        </label>
         <input
           placeholder="password"
           // required
           type="password"
-          className=" w-full rounded-full px-4 py-1  text-primary-800"
+          className="block w-full rounded-lg px-4 py-3  text-primary-800"
           name="password"
           value={formData.password}
           onChange={onChange}
         />
         {errors.password && <p className="text-red-500">{errors.password}</p>}
       </div>
-      <div className="flex items-center justify-center">
-        <button
-          type="submit"
-          className="bg-accent-600 text-primary-900 px-4 py-1 border-none rounded-lg uppercase w-full"
-        >
-          SIGN UP
-        </button>
-      </div>
+
+      <button
+        type="submit"
+        className="bg-accent-600 text-primary-900 px-4 py-3 border-none rounded-lg uppercase w-full text-[18px] col-span-2"
+      >
+        SIGN UP
+      </button>
     </form>
   );
 }

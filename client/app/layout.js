@@ -1,9 +1,8 @@
-import Header from "@/app/_components/Header";
 import "@/app/_styles/globals.css";
 import { Josefin_Sans } from "next/font/google";
-import ReservationContext from "./_components/ReservationContext";
+import ReservationContext from "./context/ReservationContext";
 import { Toaster } from "react-hot-toast";
-import Spinner from "./_components/Spinner";
+import Header from "./_components/headers/Header";
 export const metadata = {
   title: {
     template: "%s - The Wild Oasis",

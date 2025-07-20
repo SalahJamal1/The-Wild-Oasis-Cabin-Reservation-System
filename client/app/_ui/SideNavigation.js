@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { MdHomeWork, MdOutlineDateRange } from "react-icons/md";
-import { useReservation } from "./ReservationContext";
+import { useReservation } from "../context/ReservationContext";
 import { FaUser } from "react-icons/fa6";
 
 const links = [

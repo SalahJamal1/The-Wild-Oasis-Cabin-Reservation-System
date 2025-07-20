@@ -1,4 +1,4 @@
-import Bookings from "@/app/_components/Bookings";
+import Bookings from "@/app/_components/booking/Bookings";
 
 export const metadata = {
   title: "Reservations",

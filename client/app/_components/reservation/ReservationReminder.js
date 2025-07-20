@@ -1,7 +1,7 @@
 "use client";
 import { MdOutlineClose } from "react-icons/md";
-import { useReservation } from "./ReservationContext";
-import { formatDates } from "../utils/helper";
+import { useReservation } from "../../context/ReservationContext";
+import { formatDates } from "../../utils/helper";
 
 function ReservationReminder() {
   const { selected, reset } = useReservation();

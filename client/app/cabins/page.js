@@ -1,8 +1,8 @@
-import Filter from "@/app/_components/Filter";
-import CabinList from "../_components/CabinList";
+import Filter from "@/app/_ui/Filter";
 import { Suspense } from "react";
-import Spinner from "@/app/_components/Spinner";
-import ReservationReminder from "../_components/ReservationReminder";
+import Spinner from "@/app/_ui/Spinner";
+import ReservationReminder from "../_components/reservation/ReservationReminder";
+import CabinList from "../_components/cabin/CabinList";
 export const revalidate = 3600;
 export const metadata = {
   title: "Cabins",

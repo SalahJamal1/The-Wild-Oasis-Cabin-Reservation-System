@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { FaLocationDot, FaUserGroup } from "react-icons/fa6";
 import { BsEyeSlashFill } from "react-icons/bs";
-import { TextEditor } from "@/app/_components/TextEditor";
-import Logo from "@/app/_components/Logo";
+import { TextEditor } from "@/app/_ui/TextEditor";
+import Logo from "../headers/Logo";
 
 function Cabin({ cabin }) {
   return (

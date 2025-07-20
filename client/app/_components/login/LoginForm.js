@@ -2,11 +2,11 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Login } from "../_lib/apiService";
-import { useReservation } from "./ReservationContext";
 import toast from "react-hot-toast";
+import { Login } from "@/app/_lib/apiService";
+import { useReservation } from "@/app/context/ReservationContext";
 
-function AccountForm() {
+function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -49,28 +49,30 @@ function AccountForm() {
 
   return (
     <form method="POST" onSubmit={handelSubmit}>
-      <label className="block text-primary-200 capitalize mb-2">
+      <label className="block text-primary-200 capitalize mb-3 tracking-wider text-[18px]">
         Email address
       </label>
       <input
-        placeholder="email"
+        placeholder="john@example.com"
         required
         type="email"
-        className="block w-full rounded-full px-4 py-1 mb-2 text-primary-800"
+        className="block w-full rounded-lg px-4 py-3 mb-8 text-primary-800"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
-      <label className="text-primary-200 capitalize mb-2">Password</label>
+      <label className="block text-primary-200 capitalize mb-3 tracking-wider text-[18px]">
+        Password
+      </label>
       <input
         placeholder="password"
         required
         type="password"
-        className=" w-full rounded-full px-4 py-1 mb-8  text-primary-800"
+        className="block w-full rounded-lg px-4 py-3 mb-8 text-primary-800"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
       <div className="flex items-center justify-between">
-        <button className="bg-accent-600 text-primary-900 px-4 py-1 border-none rounded-lg uppercase">
+        <button className="bg-accent-600 text-primary-900 px-4 py-2 border-none rounded-lg uppercase text-[18px] flex-grow mr-14">
           Login
         </button>
         <Link
@@ -84,4 +86,4 @@ function AccountForm() {
   );
 }
 
-export default AccountForm;
+export default LoginForm;

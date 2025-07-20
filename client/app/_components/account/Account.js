@@ -1,8 +1,8 @@
 "use client";
-import { useReservation } from "@/app/_components/ReservationContext";
+import { useReservation } from "@/app/context/ReservationContext";
 import User from "./User";
-import LoginMessage from "./LoginMessage";
-import Spinner from "./Spinner";
+import LoginMessage from "../login/LoginMessage";
+import Spinner from "@/app/_ui/Spinner";
 
 function Account() {
   const { user, loading } = useReservation();

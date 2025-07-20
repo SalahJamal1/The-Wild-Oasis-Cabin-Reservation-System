@@ -1,5 +1,4 @@
-import { getCabins } from "../_lib/apiService";
-
+import { getCabins } from "@/app/_lib/apiService";
 import { CabinCard } from "./CabinCard";
 
 async function CabinList({ filter }) {
