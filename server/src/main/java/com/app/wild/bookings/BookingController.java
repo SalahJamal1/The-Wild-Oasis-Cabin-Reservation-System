@@ -15,7 +15,7 @@ import java.util.List;
 @RequestMapping("/api/v1/bookings")
 @RequiredArgsConstructor
 public class BookingController {
-    private final BookingImpService service;
+    private final BookingService service;
     private final CabinImpService cabinImpService;
     private final BookingMapper mapper;
 

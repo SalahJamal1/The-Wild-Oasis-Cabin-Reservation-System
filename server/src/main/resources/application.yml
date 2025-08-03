@@ -2,7 +2,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost/wild_db
     username: root
-    password: hello1996
+    password: 2025
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
