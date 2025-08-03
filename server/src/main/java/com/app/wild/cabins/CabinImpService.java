@@ -11,11 +11,8 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-
 public class CabinImpService extends GenericService<Cabin,Integer> {
-    @Autowired
 public CabinImpService(CabinRepository cabinRepository){
         super(cabinRepository);
     }
-
 }
