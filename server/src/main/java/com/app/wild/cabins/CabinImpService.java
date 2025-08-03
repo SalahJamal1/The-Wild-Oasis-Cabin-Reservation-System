@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @Service
 public class CabinImpService extends GenericService<Cabin,Integer> {
-public CabinImpService(CabinRepository cabinRepository){
-        super(cabinRepository);
-    }
+        public CabinImpService(CabinRepository cabinRepository){
+                super(cabinRepository);
+            }
 }
