@@ -1,0 +1,40 @@
+# Node.js
+node_modules/
+
+HELP.md
+
+# استثناء target ولكن السماح بمجلدات Java في src
+target/
+!**/src/main/java/**/*
+!**/src/test/java/**/*
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+.next
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# استثناء build ولكن السماح بمجلدات Java في src
+build/
+!**/src/main/java/**/*
+!**/src/test/java/**/*
+
+### VS Code ###
+.vscode/
