@@ -38,8 +38,8 @@ function ReservationForm({ bookingData, setBookingData, cabin }: Props) {
       numNights: bookingData.numNights!,
     };
 
-    dispatch({ type: "LOADER" });
     try {
+      dispatch({ type: "LOADER" });
       const res = await apiBooking(newBooking, cabin?.id);
       router.replace(res?.data?.url);
     } catch (err) {
@@ -47,6 +47,8 @@ function ReservationForm({ bookingData, setBookingData, cabin }: Props) {
         const message = err?.response?.data?.message ?? err.message;
         toast.error(message);
       }
+    } finally {
+      dispatch({ type: "FINALLY" });
     }
   };
   if (!Auth) return <LoginMessage />;

@@ -52,6 +52,7 @@ export type IACTION =
   | { type: "USER_LOAD"; payload: IUSER }
   | { type: "USER_LOGOUT" }
   | { type: "USER_BOOKING"; payload: IBOOKING[] }
+  | { type: "FINALLY" }
   | { type: "LOADER" };
 
 const reducer = (state: ISTATE, action: IACTION): ISTATE => {
@@ -66,6 +67,8 @@ const reducer = (state: ISTATE, action: IACTION): ISTATE => {
       return { ...state, bookings: action.payload, loader: false };
     case "LOADER":
       return { ...state, loader: true };
+    case "FINALLY":
+      return { ...state, loader: false };
     default:
       return state;
   }
