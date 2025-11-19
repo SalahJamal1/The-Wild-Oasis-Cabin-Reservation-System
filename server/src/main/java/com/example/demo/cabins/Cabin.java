@@ -22,7 +22,7 @@ public class Cabin {
     private Integer regularPrice;
     private Integer discount;
     private String image;
-    @Column(length = 1000)
+    @Lob
     private String description;
 
 }

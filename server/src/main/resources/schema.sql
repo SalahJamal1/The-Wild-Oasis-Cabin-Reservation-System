@@ -1,0 +1,2 @@
+CREATE DATABASE IF NOT EXISTS wild_db;
+USE wild_db;
