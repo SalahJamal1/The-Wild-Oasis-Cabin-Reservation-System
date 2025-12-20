@@ -38,13 +38,13 @@ interface ISTATE {
   user: IUSER;
   Auth: boolean;
   loader: boolean;
-  bookings: IBOOKING[];
+  bookings: IBOOKING[] | undefined;
 }
 const initialState: ISTATE = {
   user: {} as IUSER,
   Auth: false,
   loader: false,
-  bookings: [],
+  bookings: undefined,
 };
 
 export type IACTION =

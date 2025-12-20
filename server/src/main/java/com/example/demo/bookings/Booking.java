@@ -26,7 +26,7 @@ public class Booking {
     @CreationTimestamp
     private LocalDateTime createdAt;
     private boolean has_breakfast;
-    private boolean isPaid = false;
+    private boolean isPaid;
     private Integer numGuests;
     private String observations;
     private LocalDateTime endDate;

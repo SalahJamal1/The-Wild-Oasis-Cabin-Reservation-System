@@ -44,6 +44,7 @@ public class PaymentController {
 
             newBooking.setUser(user);
             newBooking.setCabin(cabin);
+            newBooking.setPaid(false);
             String YOUR_DOMAIN = "http://localhost:3000";
             booking = bookingService.save(newBooking);
             Stripe.apiKey = stripSecretKey;

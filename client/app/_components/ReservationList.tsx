@@ -1,12 +1,14 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { GetBooking } from "../_lib/apiBookings";
 import ReservationCard from "./ReservationCard";
 import ReservationMessage from "./ReservationMessage";
 import { useCabins } from "../_hooks/useCabins";
+import Loading from "../loading";
 
 export default function ReservationList() {
   const { bookings, dispatch } = useCabins();
+  const [loading, setLoading] = useState<boolean>(true);
   useEffect(() => {
     const controller = new AbortController();
     (async () => {
@@ -16,11 +18,15 @@ export default function ReservationList() {
       } catch (err: any) {
         if (err.name === "CanceledError") return;
         console.log(err);
+      } finally {
+        setLoading(false);
       }
     })();
     return () => controller.abort();
-  }, []);
+  }, [dispatch]);
+  if (loading || bookings === undefined) return <Loading />;
   if (!bookings?.length) return <ReservationMessage />;
+
   return (
     <>
       <h2 className="font-semibold text-2xl text-accent-400 mb-7">
