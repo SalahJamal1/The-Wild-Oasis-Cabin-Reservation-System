@@ -16,14 +16,13 @@ export type IBOOKING = {
   id?: string;
   createdAt?: Date;
   has_breakfast: boolean;
-  isPaid: boolean;
+  paid: boolean;
   numNights: number;
   numGuests: number;
   observations: string;
   endDate: Date;
   startDate: Date;
   cabin?: ICabin;
-  paid?: boolean;
   totalPrice: number;
 };
 export type IUSER = {

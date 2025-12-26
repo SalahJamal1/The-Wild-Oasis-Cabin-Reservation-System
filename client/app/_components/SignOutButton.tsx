@@ -10,17 +10,16 @@ function SignOutButton() {
   const router = useRouter();
   const onClick = async () => {
     const token = localStorage.getItem("jwt");
-    if (token) {
-      dispatch({ type: "LOADER" });
-      try {
-        await logout();
-        router.push("/");
-        toast.success("You are logged out");
-        dispatch({ type: "USER_LOGOUT" });
-        localStorage.removeItem("jwt");
-      } catch (err) {
-        console.log(err);
-      }
+    if (!token) return;
+    dispatch({ type: "LOADER" });
+    try {
+      await logout();
+      router.push("/");
+      toast.success("You are logged out");
+      dispatch({ type: "USER_LOGOUT" });
+      localStorage.removeItem("jwt");
+    } catch (err) {
+      console.log(err);
     }
   };
   return (

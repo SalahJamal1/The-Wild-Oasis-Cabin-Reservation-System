@@ -51,8 +51,8 @@ public class PaymentController {
             SessionCreateParams params =
                     SessionCreateParams.builder()
                             .setMode(SessionCreateParams.Mode.PAYMENT)
-                            .setSuccessUrl(YOUR_DOMAIN + "/account/reservations?success=true")
-                            .setCancelUrl(YOUR_DOMAIN + "?canceled=true")
+                            .setSuccessUrl(YOUR_DOMAIN + "/account/reservations")
+                            .setCancelUrl(YOUR_DOMAIN + "?canceled")
                             .setClientReferenceId(booking.getId().toString())
                             .setMode(SessionCreateParams.Mode.PAYMENT)
                             .addLineItem(

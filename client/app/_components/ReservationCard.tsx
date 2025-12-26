@@ -21,7 +21,6 @@ function ReservationCard({ booking }: Props) {
     totalPrice,
     paid,
   } = booking;
-  console.log(booking);
 
   return (
     <div className="flex border border-primary-800" key={booking.id}>
