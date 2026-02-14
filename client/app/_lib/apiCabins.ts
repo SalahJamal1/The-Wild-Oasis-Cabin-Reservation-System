@@ -4,7 +4,7 @@ export const api = axios.create({
   baseURL:
     process.env.NEXT_PUBLIC_ENVIRONMENT === "docker"
       ? process.env.NEXT_PUBLIC_API_URL
-      : "http://localhost:8080/api/v1",
+      : "https://the-wild-oasis-cabin-reservation-system.onrender.com/api/v1",
   withCredentials: true,
 });
 
@@ -18,7 +18,7 @@ api.interceptors.request.use(
     }
     return config;
   },
-  (err: any) => Promise.reject(err)
+  (err: any) => Promise.reject(err),
 );
 export async function apiCabins() {
   const res = await api.get("/cabins");
