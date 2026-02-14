@@ -57,7 +57,7 @@ public class AppConfig {
         corsConfiguration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "PATCH"));
         corsConfiguration.setAllowedHeaders(List.of("*"));
         corsConfiguration.setAllowedOrigins(
-                List.of("http://localhost:3000"));
+                List.of("http://localhost:3000","https://the-wild-oasis-cabin-reservation-system-1.onrender.com"));
         source.registerCorsConfiguration("/**", corsConfiguration);
         return source;
     }
