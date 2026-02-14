@@ -4,10 +4,14 @@ import com.example.demo.token.Token;
 import com.example.demo.token.TokenRepository;
 import com.example.demo.user.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
+
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.ResponseCookie;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -67,12 +71,13 @@ public class Helper {
     }
 
     public void buildCookie(HttpServletResponse response, String name, String value, int maxAge) {
-        Cookie deviceCookie = new Cookie(name, value);
-        deviceCookie.setHttpOnly(true);
-        deviceCookie.setSecure(true);
-        deviceCookie.setPath("/");
-        deviceCookie.setMaxAge(60 * 60 * 24 * maxAge);
-        response.addCookie(deviceCookie);
+        ResponseCookie cookie = ResponseCookie.from(name, value).
+        httpOnly(true).
+        secure(true).
+        path("/").
+                maxAge(60 * 60 * 24 * maxAge).sameSite("None")
+                .build();
+        response.setHeader(HttpHeaders.SET_COOKIE, cookie.toString());
     }
 
     public void saveUsertoken(String refreshToken, String accessToken, User user, String deviceId) {
