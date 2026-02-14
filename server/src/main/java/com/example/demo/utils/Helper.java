@@ -77,7 +77,7 @@ public class Helper {
         path("/").
                 maxAge(60 * 60 * 24 * maxAge).sameSite("None")
                 .build();
-        response.setHeader(HttpHeaders.SET_COOKIE, cookie.toString());
+        response.addHeader(HttpHeaders.SET_COOKIE, cookie.toString());
     }
 
     public void saveUsertoken(String refreshToken, String accessToken, User user, String deviceId) {
