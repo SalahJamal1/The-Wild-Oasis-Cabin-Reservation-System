@@ -29,7 +29,7 @@ function ReservationForm({ bookingData, setBookingData, cabin }: Props) {
     if (!bookingData.totalPrice || !bookingData.numNights) return;
     const newBooking: IBOOKING = {
       has_breakfast: false,
-      isPaid: true,
+      paid: true,
       numGuests: bookingData.numGuests,
       observations: bookingData.observations,
       startDate: bookingData.range.from,
@@ -82,7 +82,7 @@ function ReservationForm({ bookingData, setBookingData, cabin }: Props) {
                 <option value={x} key={x}>
                   {x} {x === 1 ? "guest" : "guests"}
                 </option>
-              )
+              ),
             )}
           </select>
         </div>
