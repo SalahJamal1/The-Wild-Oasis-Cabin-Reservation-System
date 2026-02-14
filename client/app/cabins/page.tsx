@@ -15,7 +15,7 @@ type Props = {
   searchParams: any;
 };
 export default async function Page({ searchParams }: Props) {
-  const capacity = searchParams?.capacity ?? "all";
+  const capacity = (await searchParams?.capacity) ?? "all";
   const cabins = await apiCabins();
 
   return (

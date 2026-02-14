@@ -79,7 +79,7 @@ export interface Props extends ISTATE {
 export default function CabinsContext({ children }: { children: ReactNode }) {
   const [{ user, Auth, loader, bookings }, dispatch] = useReducer(
     reducer,
-    initialState
+    initialState,
   );
 
   useEffect(() => {
@@ -90,6 +90,7 @@ export default function CabinsContext({ children }: { children: ReactNode }) {
         dispatch({ type: "LOADER" });
         try {
           const res = await refreshToken(controller.signal);
+          console.log(res);
           localStorage.setItem("jwt", res.data.access_token);
           dispatch({ type: "USER_LOAD", payload: res.data.user });
         } catch (err: any) {
